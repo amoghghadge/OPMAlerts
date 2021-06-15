@@ -1,5 +1,7 @@
 <html>
     <head>
+        <script src="https://unpkg.com/@ungap/custom-elements-builtin"></script>
+        <script type="module" src="https://unpkg.com/x-frame-bypass"></script>
         <script>
 
             function myFunction() {
@@ -16,7 +18,9 @@
                 };
                 xhttp.open("GET", "https://nhjevg15fi.execute-api.us-east-2.amazonaws.com/prod/sendMessageJava?message=" + document.getElementById("message").value 
                 + "&ph1=" + document.getElementById("ph1").value + "&ph2=" + document.getElementById("ph2").value + "&ph3=" + document.getElementById("ph3").value
-                , true);
+                + "&ph4=" + document.getElementById("ph4").value + "&ph5=" + document.getElementById("ph5").value + "&ph6=" + document.getElementById("ph6").value
+                + "&ph7=" + document.getElementById("ph7").value + "&ph8=" + document.getElementById("ph8").value + "&ph9=" + document.getElementById("ph9").value
+                + "&ph10=" + document.getElementById("ph10").value, true);
                 xhttp.send();
                 //https://nhjevg15fi.execute-api.us-east-2.amazonaws.com/prod/sendMessageJava -> API link w/o parameters
                 //https://nhjevg15fi.execute-api.us-east-2.amazonaws.com/prod/sendMessageJava?message=Hi&ph1=1&ph2=2&ph3=3 -> API link example w/ parameters
@@ -27,21 +31,35 @@
     <body>
         <div align="left">
 
-            <h3><span id="my-demo">Send a message to phone numbers</span></h3>
+            <h3><span id="my-demo">Send a Status Update</span></h3>
             <form>
 
                 <p>Enter a message:</p>
                 <p><input id="message" type="text" placeholder="Enter message here"></p>
 
-                <p>Enter phone numbers:</p>
-                <p><input id="ph1" type="text" placeholder="Enter phone number here"></p>
-                <p><input id="ph2" type="text" placeholder="Enter phone number here"></p>
-                <p><input id="ph3" type="text" placeholder="Enter phone number here"></p>
+                <p>Enter phone numbers: (Maximum 10 at a time)</p>
+                <p><input id="ph1" type="text" placeholder="Enter phone number"></p>
+                <p><input id="ph2" type="text" placeholder="Enter phone number"></p>
+                <p><input id="ph3" type="text" placeholder="Enter phone number"></p>
+                <p><input id="ph4" type="text" placeholder="Enter phone number"></p>
+                <p><input id="ph5" type="text" placeholder="Enter phone number"></p>
+                <p><input id="ph6" type="text" placeholder="Enter phone number"></p>
+                <p><input id="ph7" type="text" placeholder="Enter phone number"></p>
+                <p><input id="ph8" type="text" placeholder="Enter phone number"></p>
+                <p><input id="ph9" type="text" placeholder="Enter phone number"></p>
+                <p><input id="ph10" type="text" placeholder="Enter phone number"></p>
 
 
             </form>
             <button onclick="myFunction()">Click me to send message</button><br>
             
         </div>
+        <div align="right">
+
+            <iframe is="x-frame-bypass" src="https://www.opm.gov/policy-data-oversight/snow-dismissal-procedures/current-status/" width="1000" height="1000"
+            scrolling="no" style="border: 0px none; margin-left: -185px; height: 750px; margin-top: -1050px; width: 1000px;"></iframe>
+
+        </div>
+        
     </body>
 </html>
