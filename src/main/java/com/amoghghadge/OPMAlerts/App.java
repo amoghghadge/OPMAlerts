@@ -37,13 +37,18 @@ public class App implements RequestHandler <Map <String, Object>, String> {
         String topicArn = createSNSTopic(snsClient);
 
         //Subscribes phone numbers to SNS topic
+        int count = 0;
         ArrayList<String> phoneNumbers = new ArrayList<String>();
 
         for (String s : event.keySet()) {
 
-            if (!s.equals("")) {
+            if (!s.equals("") && count != 0) {
 
                 phoneNumbers.add("+1" + event.get(s).toString());
+
+            } else {
+
+                count++;
 
             }
 
