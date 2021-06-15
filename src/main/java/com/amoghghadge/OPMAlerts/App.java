@@ -1,5 +1,6 @@
 package com.amoghghadge.OPMAlerts;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,6 +37,25 @@ public class App implements RequestHandler <Map <String, Object>, String> {
         String topicArn = createSNSTopic(snsClient);
 
         //Subscribes phone numbers to SNS topic
+        ArrayList<String> phoneNumbers = new ArrayList<String>();
+
+        for (String s : event.keySet()) {
+
+            if (!s.equals("")) {
+
+                phoneNumbers.add("+1" + event.get(s).toString());
+
+            }
+
+        }
+
+        for (String s : phoneNumbers) {
+
+            subscribeToTopic(snsClient, topicArn, "sms", s);
+
+        }
+
+        /*
         String ph1 = "+1" + event.getOrDefault("ph1", "7033004197").toString();
         String ph2 = "+1" + event.getOrDefault("ph2", "7039997246").toString();
         String ph3 = "+1" + event.getOrDefault("ph3", "7039999195").toString();
@@ -43,6 +63,7 @@ public class App implements RequestHandler <Map <String, Object>, String> {
         subscribeToTopic(snsClient, topicArn, "sms", ph1);
         subscribeToTopic(snsClient, topicArn, "sms", ph2);
         subscribeToTopic(snsClient, topicArn, "sms", ph3);
+        */
 
         //Sets SMS Message Attributes
         Map<String, MessageAttributeValue> smsAttributes = new HashMap<String, MessageAttributeValue>();
@@ -67,7 +88,19 @@ public class App implements RequestHandler <Map <String, Object>, String> {
         sendSMSMessageToTopic(snsClient, topicArn, message, smsAttributes);
 
         //API return
-        return "Sent the message '" + message + "' to " + ph1 + ", " + ph2 + ", and " + ph3;
+        String result = "Sent the message '" + message + "' to ";
+
+        for (String s : event.keySet()) {
+
+            if (!s.equals("")) {
+
+                result += (event.get(s).toString() + ", ");
+
+            }
+
+        }
+
+        return result;
         
         // return "Hello " + System.getenv().getOrDefault("name", "Hello") + "!"; --> uses environment variables set up in the lambda function configuration
         // event.get("KEY_NAME") --> gets the value of the key - from the key pair - from the event map (compares to the json doc that is passed in lambda)
