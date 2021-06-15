@@ -26,6 +26,8 @@ public class App implements RequestHandler <Map <String, Object>, String> {
     
     public String handleRequest (Map<String, Object> event, Context context) {
         
+        int invokeNumber = 0;
+
         //Prints out input (event)
         System.out.println(event);
 
@@ -34,7 +36,7 @@ public class App implements RequestHandler <Map <String, Object>, String> {
 		AmazonSNSClient snsClient = new AmazonSNSClient();
 
         //Creates SNS topic and gets stores the topic ARN
-        String topicArn = createSNSTopic(snsClient);
+        String topicArn = createSNSTopic(snsClient, invokeNumber);
 
         //Subscribes phone numbers to SNS topic
         int count = 0;
@@ -91,15 +93,21 @@ public class App implements RequestHandler <Map <String, Object>, String> {
         //Sends a message to the SNS topic
         String message = event.getOrDefault("message", "Message").toString();
         sendSMSMessageToTopic(snsClient, topicArn, message, smsAttributes);
+        invokeNumber++;
 
         //API return
         String result = "Sent the message '" + message + "' to ";
+        count = 0;
 
         for (String s : event.keySet()) {
 
-            if (!s.equals("")) {
+            if (!s.equals("") && count != 0) {
 
                 result += (event.get(s).toString() + ", ");
+
+            } else {
+
+                count++;
 
             }
 
@@ -114,9 +122,9 @@ public class App implements RequestHandler <Map <String, Object>, String> {
     }
 
     //Method to create SNS topic
-    public static String createSNSTopic (AmazonSNSClient snsClient) {
+    public static String createSNSTopic (AmazonSNSClient snsClient, int invokeNumber) {
 
-        CreateTopicRequest createTopic = new CreateTopicRequest("OPMAlerts");
+        CreateTopicRequest createTopic = new CreateTopicRequest("mySNSTopic_" + invokeNumber);
         CreateTopicResult result = snsClient.createTopic(createTopic);
         System.out.println("Create topic request: " + snsClient.getCachedResponseMetadata(createTopic));
         System.out.println("Create topic result: " + result);
