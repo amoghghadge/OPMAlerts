@@ -44,7 +44,7 @@ public class App implements RequestHandler <Map <String, Object>, String> {
 
         for (String s : event.keySet()) {
 
-            if (!s.equals("") && count != 0) {
+            if (!event.get(s).equals("") && count != 0) {
 
                 phoneNumbers.add("+1" + event.get(s).toString());
 
@@ -61,16 +61,6 @@ public class App implements RequestHandler <Map <String, Object>, String> {
             subscribeToTopic(snsClient, topicArn, "sms", s);
 
         }
-
-        /*
-        String ph1 = "+1" + event.getOrDefault("ph1", "7033004197").toString();
-        String ph2 = "+1" + event.getOrDefault("ph2", "7039997246").toString();
-        String ph3 = "+1" + event.getOrDefault("ph3", "7039999195").toString();
-        
-        subscribeToTopic(snsClient, topicArn, "sms", ph1);
-        subscribeToTopic(snsClient, topicArn, "sms", ph2);
-        subscribeToTopic(snsClient, topicArn, "sms", ph3);
-        */
 
         //Sets SMS Message Attributes
         Map<String, MessageAttributeValue> smsAttributes = new HashMap<String, MessageAttributeValue>();
@@ -96,18 +86,17 @@ public class App implements RequestHandler <Map <String, Object>, String> {
 
         //API return
         String result = "Sent the message '" + message + "' to ";
-        count = 0;
 
-        for (String s : event.keySet()) {
+        for (int i = 0; i < phoneNumbers.size(); i++) {
 
-            if (!s.equals("") && count != 0) {
+            if (i != phoneNumbers.size() - 1) {
 
-                result += (event.get(s).toString() + ", ");
+                result += (phoneNumbers.get(i) + ", ");
 
             } else {
 
-                count++;
-
+                result += phoneNumbers.get(i);
+                
             }
 
         }
