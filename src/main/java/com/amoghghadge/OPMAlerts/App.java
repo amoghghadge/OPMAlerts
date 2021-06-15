@@ -26,7 +26,7 @@ public class App implements RequestHandler <Map <String, Object>, String> {
     
     public String handleRequest (Map<String, Object> event, Context context) {
         
-        int invokeNumber = 0;
+        int invokeNumber = (int)(Math.random()*999999999);
 
         //Prints out input (event)
         System.out.println(event);
@@ -93,7 +93,6 @@ public class App implements RequestHandler <Map <String, Object>, String> {
         //Sends a message to the SNS topic
         String message = event.getOrDefault("message", "Message").toString();
         sendSMSMessageToTopic(snsClient, topicArn, message, smsAttributes);
-        invokeNumber++;
 
         //API return
         String result = "Sent the message '" + message + "' to ";
