@@ -16,27 +16,20 @@
 ___________________________________________________________________________________________________
 
 ### Hosting
-    This source code is packaged and deployed on AWS Lambda.
+##### This source code is packaged and deployed on AWS Lambda.
 
-    The OPM Alerts folder inside of the resources folder in src contains 
-    the code for the website, and is uploaded onto an AWS S3 bucket.
-
-    An API Gateway was made to invoke the lambda function when the button on the website is pressed
-
-    A CloudFront Distribution is used to provide a single HTTPS endpoint to
-    the backend.
-
-    Route 53 is used to point opm.amoghghadge.com to the CloudFront Distribution
+##### The OPM Alerts folder inside of the resources folder in src contains 
+##### the code for the website, and is uploaded onto an AWS S3 bucket.
 
 ___________________________________________________________________________________________________
 
 ### Technical Components
    
-- Framework      : [AWS Amplify](https://aws-amplify.github.io/)<br>
-- UI             : React<br>
-- AuthN/AuthZ    : Cognito User Pool and Identity Federation from Amazon/Google<br>
-- GraphQL        : CRUD operations<br>
-- CloudFormation : Infrastructure<br>
+- Source Code            : Packaged and deployed on AWS Lambda<br>
+- Website                : Uploaded to an S3 bucket<br>
+- API                    : API Gateway invokes the lambda function when the button on the website is pressed<br>
+- Application Endpoint   : CloudFront provides an HTTPS endpoint to the backend<br>
+- DNS                    : Route 53 points opm.amoghghadge.com to the CloudFront Distribution<br>
 
 ___________________________________________________________________________________________________
 
