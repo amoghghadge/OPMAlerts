@@ -5,8 +5,8 @@
     determine whether or not to close, delay, or open, as they can base their judgement off the 
     operating status of the federal offices in DC. Then, they can send a message to people regarding
     a judgement call on if their office will be closed, delayed, or open. For example, a doctor that
-    runs an office could use this website to message employees as well as patients whether or not the
-    office is closed, delayed, or open.
+    runs an office could use this website to message employees as well as patients whether or not 
+    the office is closed, delayed, or open.
 
     The web application is available at opm.amoghghadge.com
 ___________________________________________________________________________________________________
