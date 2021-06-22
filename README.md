@@ -1,14 +1,5 @@
 ### Introduction
-    TicketService is a demo web application to book concert tickets. 
-    Its a simple fun application to demostrate security features of AWS Cognito. 
-    
-    AWS Cognito is used for Access control, sign-in and sign-up for the web application.
-    
-    Specifically AWS Cognito is used for -
-    -   Identity Federation : Users can sign in through identity providers like Google and Amazon.
-    -   Cognito User Pools : Users can create their identity in the secure user directory.
-    
-    In addition this application lets users reset their passwords.
+    OPM Alerts is a web application that independent offices can use to convey whether their offices are closed, delayed, or open. The website shows the Operating Status of Federal Offices in the Washington, DC area, and allows the user to message up to 10 phone numbers. This makes it easy for people with independent offices in the DC area to determine whether or not to close, delay, or open, as they can base their judgement off the operating status of the federal offices in DC.
 
     The website is opm.amoghghadge.com
 ___________________________________________________________________________________________________
