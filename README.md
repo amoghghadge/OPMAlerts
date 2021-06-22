@@ -11,10 +11,23 @@
     -   Cognito User Pools : Users can create their identity in the secure user directory.
     
     In addition this application lets users reset their passwords.
+
+    The website is opm.amoghghadge.com
 ___________________________________________________________________________________________________
 
 ### Hosting
-##### This website is hosted on AWS S3 @ [TicketService](http://ticketservice-20190327092338-hostingbucket-prod.s3-website-us-east-1.amazonaws.com/)
+    This source code is packaged and deployed on AWS Lambda.
+
+    The OPM Alerts folder inside of the resources folder in src contains 
+    the code for the website, and is uploaded onto an AWS S3 bucket.
+
+    An API Gateway was made to invoke the lambda function when the button on the website is pressed
+
+    A CloudFront Distribution is used to provide a single HTTPS endpoint to
+    the backend.
+
+    Route 53 is used to point opm.amoghghadge.com to the CloudFront Distribution
+
 ___________________________________________________________________________________________________
 
 ### Technical Components
