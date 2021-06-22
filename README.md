@@ -14,7 +14,7 @@
 ___________________________________________________________________________________________________
 
 ### Hosting
-This source code is packaged and deployed on AWS Lambda.
+This source code is packaged and deployed on AWS Lambda.<br>
 The OPM Alerts folder inside of the resources folder in src contains the code for the website, and is uploaded onto an AWS S3 bucket.
 
 ___________________________________________________________________________________________________
