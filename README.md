@@ -1,5 +1,3 @@
-## OPMAlerts
-
 ### Introduction
     TicketService is a demo web application to book concert tickets. 
     Its a simple fun application to demostrate security features of AWS Cognito. 
