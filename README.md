@@ -1,4 +1,4 @@
-## OPMAlerts : A fully functional concert ticket booking demo app
+## OPMAlerts
 
 ### Introduction
     TicketService is a demo web application to book concert tickets. 
@@ -29,40 +29,3 @@ ________________________________________________________________________________
 
 ### Architecture
 ![Architecture](ticketservice/CognitoArchitecture.png)
-
-___________________________________________________________________________________________________
-
-
-### Steps to build and deploy -
-
-##### 1.  Install [Node.js®](https://nodejs.org/en/download/) and [npm](https://www.npmjs.com/get-npm)
-
-    If you have brew use "brew install node"
-    Verify that you are running at least Node.js version 8.x or greater and npm version 5.x 
-    or greater by running node -v and npm -v in a terminal/console window.
-
-##### 2.  Install and configure the Amplify CLI.
-
-    $ npm install -g @aws-amplify/cli
-    $ amplify configure
-
-##### 3.  Clone this repo
-
-    $ git clone git@github.com:myGitLoginId/TicketServiceUsingAWSAmplify.git
-
-##### 4.  Initialize Amplify
-    From project root 
-    $ cd tickerservice           | sub-dir consisting of amplify and app code.
-    $ amplify init               | initialize your project.
-    $ amplify env checkout prod  | checkout existing master/prod env.
-    $ amplify env add            | (optional) initialize your own env.
-    $ amplify push               | create env in AWS.
-
-##### 5.  Run npm scripts (available scripts)
-    From project root
-    $ npm install                | First time install of dependent npm modules.
-    $ npm start                  | Runs the app in the development mode.
-    $ npm test                   | Launches the test runner in the interactive watch mode.
-    $ npm run build              | Builds the app for production in the `build` folder.
-
-___________________________________________________________________________________________________

@@ -25,3 +25,8 @@ buildNumber.properties
 .classpath
 .project
 .vscode/
+
+.editorconfig
+.gitattributes
+.gitignore
+.travis.yml
