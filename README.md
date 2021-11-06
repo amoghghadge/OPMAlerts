@@ -1,9 +1,9 @@
 ### Introduction
-    OPM Alerts is a web application that independent offices can use to convey whether their offices 
-    are closed, delayed, or open. The website shows the Operating Status of Federal Offices in the 
-    Washington, DC area. This makes it easy for people with independent offices in the DC area to 
-    determine whether or not to close, delay, or open, as they can base their judgement off the 
-    operating status of the federal offices in DC. 
+    OPM Alerts is a web application that independent offices can use to convey whether their 
+    offices are closed, delayed, or open. The website shows the Operating Status of Federal Offices 
+    in the Washington, DC area. This makes it easy for people with independent offices in the DC 
+    area to determine whether or not to close, delay, or open, as they can base their judgement 
+    off the operating status of the federal offices in DC. 
     
     Then, they can send a text message to people regarding a judgement call on if their office 
     will be closed, delayed, or open. For example, a doctor that runs an office could use this 
